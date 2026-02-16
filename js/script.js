@@ -12,3 +12,11 @@ if(localStorage.getItem("username")){
         userinfo.style.display="none"
     }
 }
+let explore=document.getElementById("explore")
+let section_products=document.getElementById("products_section")
+explore.onclick=function(){
+    section_products.scrollIntoView({
+        behavior: "smooth"
+    })
+}
+
