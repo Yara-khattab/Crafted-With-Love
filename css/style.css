@@ -87,12 +87,12 @@ main p {
 #explore{
 font-family: 'Times New Roman', Times, serif;
  text-decoration: none;
- margin-top: 5px;
+ margin-top: 6px;
  font-size: 21px;
  padding: 0 5px;
  border-radius: 4px;
- border: 2px solid rgb(138, 113, 78);
- color: #4e3e31;
+ background-color: #6b5443;
+ color: white;
  margin-right: 7px;
 }
 #products_section{
@@ -101,6 +101,7 @@ font-family: 'Times New Roman', Times, serif;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-transform: capitalize;
 }
 #products_section .btn{
     width: 150px;
@@ -117,6 +118,7 @@ font-family: 'Times New Roman', Times, serif;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    gap: 25px;
 }
 .card-body{
 margin: auto;
