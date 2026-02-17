@@ -19,4 +19,35 @@ explore.onclick=function(){
         behavior: "smooth"
     })
 }
+let search=document.getElementById("search-input")
+let search_btn=document.getElementById("search-btn")
+let product=document.querySelectorAll(".products .card")
+let searchtype=document.getElementById("select_search")
+function search_file(){
+    let item=search.value.toLowerCase();
+    let type=searchtype.value;
+    product.forEach(element => {
+        let productname=element.querySelector("h5").innerHTML.toLowerCase();
+        let productcategory=element.querySelectorAll("p")[1].innerHTML.toLowerCase();
+        if(type=="Search by Product Name"){
+         if(productname.includes(item)){
+            element.classList.remove("d-none");
+        }
+        else{
+           element.classList.add("d-none");
+        }
+        }
+        else if(type=="Search by Category"){
+         if(productcategory.includes(item)){
+            element.classList.remove("d-none");
+        }
+        else{
+           element.classList.add("d-none");
+        }
+        }  
+    });
+}
+search_btn.addEventListener("click",search_file)
+search.addEventListener("keyup",search_file)
+
 
