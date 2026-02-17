@@ -7,7 +7,8 @@ if(localStorage.getItem("username")){
    userinfo.style.display="block"
     username.innerHTML=localStorage.getItem("username")
     logout.onclick=function(){
-        localStorage.removeItem("isLoggedIn");
+        localStorage.clear()
+        // localStorage.removeItem("isLoggedIn");
         btns.style.display="block"
         userinfo.style.display="none"
     }
@@ -49,5 +50,6 @@ function search_file(){
 }
 search_btn.addEventListener("click",search_file)
 search.addEventListener("keyup",search_file)
+
 
 
