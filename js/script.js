@@ -50,6 +50,3 @@ function search_file(){
 }
 search_btn.addEventListener("click",search_file)
 search.addEventListener("keyup",search_file)
-
-
-
