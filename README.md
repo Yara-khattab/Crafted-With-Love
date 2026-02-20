@@ -52,10 +52,11 @@
 | ![Home](home_page.jpeg) | ![Favorites](fav_page.jpeg) |ps://via.placeholder.com/500x300?text=Home+Page+Preview) | ![Favorites Preview](https://via.placeholder.com/500x300?text=Favorites+Management) |
 
 ---
-## 🚀 Getting Started
+### 🔗 Project Links
 
- **Visit the Repository:**
-   [View Crafted With Love](https://yara-khattab.github.io/Crafted-With-Love/)
+* **Codebase:** [github.com/Yara-khattab/Crafted-With-Love](https://github.com/Yara-khattab/Crafted-With-Love)
+* **Live Site:** [Explore the Live Demo 🚀](https://yara-khattab.github.io/Crafted-With-Love/)
+  
 ---
 
 ## 📜 Personal Touch
