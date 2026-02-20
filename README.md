@@ -55,7 +55,7 @@
 ## 🚀 Getting Started
 
  **Visit the Repository:**
-   [View Crafted With Love on GitHub](https://github.com/Yara-khattab/Crafted-With-Love)
+   [View Crafted With Love](https://yara-khattab.github.io/Crafted-With-Love/)
 ---
 
 ## 📜 Personal Touch
