@@ -60,7 +60,7 @@
 
 | Home Page | Favorites Page |
 | :---: | :---: |
-| ![Home](home page.jpeg) | ![Favorites](fav page.jpeg) |ps://via.placeholder.com/500x300?text=Home+Page+Preview) | ![Favorites Preview](https://via.placeholder.com/500x300?text=Favorites+Management) |
+| ![Home](home_page.jpeg) | ![Favorites](fav_page.jpeg) |ps://via.placeholder.com/500x300?text=Home+Page+Preview) | ![Favorites Preview](https://via.placeholder.com/500x300?text=Favorites+Management) |
 
 ---
 
