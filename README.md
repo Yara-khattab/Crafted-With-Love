@@ -1,4 +1,4 @@
-# 🎨 Crafted With Love - Handmade E-Commerce Platform
+##  Crafted With Love - Handmade E-Commerce Platform
 
 **Crafted With Love** is a high-performance, responsive e-commerce web application designed for selling unique handmade gifts. This project demonstrates advanced DOM manipulation, state management using LocalStorage, and a seamless user experience (UX) from browsing to checkout.
 
@@ -60,7 +60,7 @@
 
 | Home Page | Favorites Page |
 | :---: | :---: |
-| ![Home](./home page.jpeg) | ![Favorites](./fav page.jpeg) |ps://via.placeholder.com/500x300?text=Home+Page+Preview) | ![Favorites Preview](https://via.placeholder.com/500x300?text=Favorites+Management) |
+| ![Home](home page.jpeg) | ![Favorites](fav page.jpeg) |ps://via.placeholder.com/500x300?text=Home+Page+Preview) | ![Favorites Preview](https://via.placeholder.com/500x300?text=Favorites+Management) |
 
 ---
 
