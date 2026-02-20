@@ -53,10 +53,9 @@
 
 ---
 ## 🚀 Getting Started
-1. **Clone the Repo:**
-   ```bash
-   git clone https://github.com/Yara-khattab/Crafted-With-Love.git
 
+ **Visit the Repository:**
+   [View Crafted With Love on GitHub](https://github.com/Yara-khattab/Crafted-With-Love)
 ---
 
 ## 📜 Personal Touch
