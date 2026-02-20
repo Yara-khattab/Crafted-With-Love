@@ -2,6 +2,7 @@ let username=document.getElementById("user")
 let logout=document.getElementById("logout")
 let userinfo=document.querySelector(".user-info")
 let btns=document.querySelector(".btns")
+let count=localStorage.getItem("cartCount") ? parseInt(localStorage.getItem("cartCount")):0
 if(localStorage.getItem("username")){
   btns.style.display="none"
    userinfo.style.display="block"
@@ -58,49 +59,60 @@ search.addEventListener("keyup",search_file)
 let favItems=localStorage.getItem("favProducts")?JSON.parse(localStorage.getItem("favProducts")):[];
 let love=document.querySelectorAll(".card i")
    love.forEach(element=>{
-    let productName = element.parentElement.querySelector("h5").innerText;
-    if (favItems.includes(productName)) {
+    let card = element.closest(".card");
+    let productName = card.querySelector("h5").innerText;
+    let productImg = card.querySelector("img").src;
+    let productCategory = card.querySelectorAll("p")[1].innerHTML;
+    if (favItems.some(item => item.name === productName)) {
         element.classList.replace("fa-regular", "fa-solid");
         element.style.color = "red";
     }
-    element.onclick=function(){
-        if(!localStorage.getItem("username")){
-            window.location.href="login.html"
-            return
-        }
-    if(element.classList.contains("fa-regular")){
-        element.classList.replace("fa-regular","fa-solid")
-        element.style.color="red"
-        favItems.push(productName);
+    element.onclick = function() {
+    if (!localStorage.getItem("username")) {
+        window.location.href = "login.html";
+        return;
     }
-    else{
-        element.classList.replace("fa-solid","fa-regular")
-        element.style.color=""
-        favItems = favItems.filter(item => item !== productName);
+    if (element.classList.contains("fa-regular")) {
+        element.classList.replace("fa-regular", "fa-solid");
+        element.style.color = "red";
+        let favObj = { 
+        name: productName,
+        img: productImg,
+        category: productCategory 
+        };
+        favItems.push(favObj);
+    } else {
+        element.classList.replace("fa-solid", "fa-regular");
+        element.style.color = "";
+        favItems = favItems.filter(item => item.name !== productName);
     }
     localStorage.setItem("favProducts", JSON.stringify(favItems));
-   }
+}
 })
 let productsname=document.getElementById("cart-products-names")
 let buy=document.querySelectorAll(".card .btn")
-let count=0
 let cart_count=document.getElementById("cart-count")
 let viewAllBtn=document.getElementById("view_all")
 let emptymsg=document.getElementById("msg_empty")
+let productsincart=localStorage.getItem("productsincart")?JSON.parse(localStorage.getItem("productsincart")):[]
 buy.forEach(element=>{
     element.onclick=function(){
         if(!localStorage.getItem("username")){
             window.location.href="login.html"
             return
         }
-        let name=element.parentElement.querySelector("h5").innerText
-        let price=element.parentElement.querySelectorAll("p")[0].innerHTML
+        let card = element.closest(".card");
+        let name=card.querySelector("h5").innerText
+        let price=card.querySelectorAll("p")[0].innerHTML
+        let category=card.querySelectorAll("p")[1].innerHTML
+        let img=card.querySelector("img").src
+        let productid=name.replace(/\s/g, '')
         if(element.classList.contains("btn-primary")){
             viewAllBtn.classList.remove("d-none");
             emptymsg.classList.add("d-none");
             element.classList.replace("btn-primary","btn-danger")
             element.innerHTML="Remove From Cart"
-            element.id = name.replace(/\s/g, '');
+            element.id = productid
             count++
             cart_count.innerHTML=count
             productsname.innerHTML += `
@@ -113,12 +125,24 @@ buy.forEach(element=>{
             <span class="qty">1</span>
             <button class="btn btn-sm w-auto me-4" onclick="change(this,'minus')">-</button>
             </div></div>`
+            let producrobject={
+                id:name.replace(/\s/g, ''),
+                name:name,
+                price:price,
+                category:category,
+                img:img,
+                quantity:1
+            }
+            productsincart.push(producrobject)
+            localStorage.setItem("productsincart",JSON.stringify(productsincart))
         }
         else{
             element.classList.replace("btn-danger","btn-primary")
              element.innerHTML="Add To Cart"
              count--
             cart_count.innerHTML=count
+            productsincart = productsincart.filter(item => item.id !== productid);
+            localStorage.setItem("productsincart", JSON.stringify(productsincart));
             let itemremove=document.getElementById(`item-${name.replace(/\s/g,'')}`)
             if(itemremove){
                 itemremove.remove();
@@ -139,6 +163,8 @@ shopping_icon.onclick=function(e){
 function change(btn,action){
     let num=btn.parentElement.querySelector("span")
     let current=parseInt(num.innerHTML)
+    let itemcard = btn.parentElement.parentElement
+    let itemid = itemcard.id.replace('item-', '')
     if(action=='plus'){
         current++;
         count++;
@@ -146,6 +172,17 @@ function change(btn,action){
     else if(action=='minus'){
         current--;
        count--;
+    }
+    let productsincart=JSON.parse(localStorage.getItem("productsincart"))||[]
+    let productindex=productsincart.findIndex(item=>item.id===itemid)
+    if(productindex!=-1){
+        if(current>0){
+            productsincart[productindex].quantity=current
+        }
+        else{
+            productsincart.splice(productindex,1)
+        }
+        localStorage.setItem("productsincart", JSON.stringify(productsincart))
     }
     cart_count.innerHTML=count
      if(current==0){
@@ -188,4 +225,7 @@ window.onload=function() {
     } else {
         shopping.classList.add("d-none");
     }
+}
+viewAllBtn.onclick=function(){
+    window.location.href="checkout.html"
 }
