@@ -45,22 +45,21 @@
   
 ---
 
-## 🚀 Getting Started
-
-1.  **Clone the Repo:**
-    ```bash
-    git clone [https://github.com/Yara-khattab/Crafted-With-Love.git](https://github.com/YourUsername/Crafted-With-Love.git)
-    ```
-2.  **Run the Project:**
-    Simply open `index.html` in your browser or use the **Live Server** extension in VS Code.
-
----
-
 ## 📸 Project Preview
 
 | Home Page | Favorites Page |
 | :---: | :---: |
 | ![Home](home_page.jpeg) | ![Favorites](fav_page.jpeg) |ps://via.placeholder.com/500x300?text=Home+Page+Preview) | ![Favorites Preview](https://via.placeholder.com/500x300?text=Favorites+Management) |
+
+---
+## 🚀 Getting Started
+
+1.  **Clone the Repo:**
+    ```bash
+    git clone [https://github.com/Yara-khattab/Crafted-With-Love.git](https://github.com/Yara-khattab/Crafted-With-Love.git)
+    ```
+2.  **Run the Project:**
+    Simply open `index.html` in your browser or use the **Live Server** extension in VS Code.
 
 ---
 
