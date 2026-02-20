@@ -53,13 +53,9 @@
 
 ---
 ## 🚀 Getting Started
-
-1.  **Clone the Repo:**
-    ```bash
-    git clone [https://github.com/Yara-khattab/Crafted-With-Love.git](https://github.com/Yara-khattab/Crafted-With-Love.git)
-    ```
-2.  **Run the Project:**
-    Simply open `index.html` in your browser or use the **Live Server** extension in VS Code.
+1. **Clone the Repo:**
+   ```bash
+   git clone https://github.com/Yara-khattab/Crafted-With-Love.git
 
 ---
 
