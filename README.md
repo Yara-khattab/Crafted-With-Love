@@ -4,7 +4,7 @@
 
 ---
 
-##  Key Features
+## ✨Key Features
 
 ### 🛒 Dynamic Shopping Cart
 * **Real-time Updates:** Add or remove items with instant feedback.
