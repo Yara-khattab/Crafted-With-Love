@@ -16,7 +16,6 @@ if(localStorage.getItem("username")){
         productsname.innerHTML = "";
         viewAllBtn.classList.add("d-none");
         emptymsg.classList.remove("d-none");
-        // localStorage.removeItem("isLoggedIn");
         btns.style.display="block"
         userinfo.style.display="none"
     }
