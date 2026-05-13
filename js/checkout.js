@@ -11,12 +11,11 @@ if(localStorage.getItem("username")){
     username.innerHTML=localStorage.getItem("username")
     logout.onclick=function(){
         localStorage.clear()
-        count = 0;
+        count =0;
         cart_count.innerHTML = 0;
         productsname.innerHTML = "";
         viewAllBtn.classList.add("d-none");
         emptymsg.classList.remove("d-none");
-        // localStorage.removeItem("isLoggedIn");
         btns.style.display="block"
         userinfo.style.display="none"
     }
